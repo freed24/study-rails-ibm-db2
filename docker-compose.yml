@@ -1,0 +1,23 @@
+version: '2'
+
+networks:
+  dockernetwork:
+    driver: bridge
+
+services:
+  gitlab:
+    build: ./db2
+    container_name: 'db2'
+    hostname: 'db2'
+    ports:
+      - '50000:50000'
+    volumes:
+      - /opt/gitlab/config:/etc/gitlab
+      - /opt/gitlab/logs:/var/log/gitlab
+      - /opt/gitlab/data:/var/opt/gitlab
+    restart: always
+    networks:
+      - dockernetwork
+    environment:
+      DB2INST1_PASSWORD: db2inst1-pwd
+      LICENSE:
