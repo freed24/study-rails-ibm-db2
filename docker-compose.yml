@@ -9,6 +9,7 @@ services:
     build: ./db2
     container_name: 'db2'
     hostname: 'db2'
+    command: db2start
     ports:
       - '50000:50000'
     volumes:
@@ -19,5 +20,5 @@ services:
     networks:
       - dockernetwork
     environment:
-      DB2INST1_PASSWORD: db2inst1-pwd
-      LICENSE:
+      DB2INST1_PASSWORD: "db2inst1-pwd"
+      LICENSE: "accept"
