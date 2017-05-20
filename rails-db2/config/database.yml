@@ -1,5 +1,7 @@
 development:
   adapter:      ibm_db
+  host:         localhost
+  port:         50000
   database:     SAMPLE
   username:     db2inst1
   password:     db2inst1-pwd
